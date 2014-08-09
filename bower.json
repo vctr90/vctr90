@@ -1,0 +1,8 @@
+{
+	"name":"vctr90",
+	"dependencies":{
+		"jquery":"1.11.1",
+		"angular":"1.2.21",
+		"angular-route":"1.2.21"
+	}
+}
