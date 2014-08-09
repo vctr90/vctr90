@@ -1,0 +1,40 @@
+.btn#responsive-menu{
+	background-color: rgb(75, 75, 75);
+	padding: 1px;
+	height: 37px;
+	width: 37px;
+	float:left;
+}
+
+.glyphicon#menu-icon{
+	color: white;
+	font-size: 12px;
+}
+
+header ul{
+	list-style:none;
+	width:33%;
+	display:none;
+}
+
+header ul li{
+	background-color:purple;
+}
+
+header ul a:hover{
+}
+
+header ul a li{
+	text-decoration:none;
+	background-color:white;
+	color:black;
+	height: 31px;
+	text-align: center;
+	padding-top: 4px;
+}
+
+header ul a li:hover{
+	text-decoration:none;
+	background-color:black;
+	color: white;
+}
