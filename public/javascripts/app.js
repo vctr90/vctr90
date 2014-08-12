@@ -1,1 +1,10 @@
-angular.module('vctr',['vctr.controllers','vctr.services','vctr.directives','ngRoute']);
+angular.module('vctr',
+	[
+		'vctr.controllers',
+		'vctr.services',
+		'vctr.directives',
+		'ngRoute'
+	])
+	.config(['$routeProvider',function($routeProvider){
+		$routeProvider.when('/',{templateUrl:'templates/default.jade'});
+	}]);

@@ -1,9 +1,17 @@
 .btn#responsive-menu{
 	background-color: rgb(75, 75, 75);
+	margin-top: 10px;
+	margin-left: 2%;
 	padding: 1px;
 	height: 37px;
 	width: 37px;
 	float:left;
+	z-index:1;
+	position:relative;
+}
+
+.btn#responsive-menu:hover{
+	background-color:black;
 }
 
 .glyphicon#menu-icon{
@@ -11,10 +19,18 @@
 	font-size: 12px;
 }
 
+header{
+	width:100%;
+	height:58px;
+	background-color: rgb(34, 33, 33);
+}
+
 header ul{
 	list-style:none;
-	width:33%;
+	width:93%;
 	display:none;
+	position:fixed;
+	top: 68px;
 }
 
 header ul li{
@@ -22,11 +38,13 @@ header ul li{
 }
 
 header ul a:hover{
+	text-decoration:none;
 }
 
 header ul a li{
 	text-decoration:none;
 	background-color:white;
+	background:rgba(255,255,255,0.5);
 	color:black;
 	height: 31px;
 	text-align: center;

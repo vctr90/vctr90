@@ -2,6 +2,14 @@
 
 //Show and hide header menu
 
+var show_menu = false;
+
 $('#responsive-menu').on('click',function(){
-	$('header ul').show();
+	if(!show_menu){
+		$('header ul').show();
+		show_menu = true;
+	}else{
+		$('header ul').hide();
+		show_menu = false;
+	}
 });
