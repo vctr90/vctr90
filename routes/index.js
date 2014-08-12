@@ -6,8 +6,8 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
-/*router.get('*',function(req, res){
-	res.render('index',{ tittle: 'Express'});
-});*/
+router.get('*',function(req, res){
+	res.render('templates/');
+});
 
 module.exports = router;
