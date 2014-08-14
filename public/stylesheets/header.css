@@ -31,6 +31,7 @@ header ul{
 	display:none;
 	position:fixed;
 	top: 68px;
+	z-index:2
 }
 
 header ul li{

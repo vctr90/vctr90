@@ -1,1 +1,28 @@
-as
+#content{
+}
+.avatar{
+	position:absolute;
+	left:40%;
+	top:25px;
+	width:20%;
+	border-radius:150px;
+	-moz-border-radius:150px;
+	-webkit-border-radius:150px;
+	height:auto;
+}
+.ctnt#resume{
+	margin-left:2%;
+	width:96%;
+	height:70vh;
+	margin-top:20px;
+}
+.ctnt{
+	background-color:black;
+	background: rgba(0, 0, 0, 0.85);
+}
+
+.ctnt p{
+	color:white;
+	font-weight:bold;
+	text-align:center;
+}
