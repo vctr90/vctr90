@@ -27,11 +27,12 @@ header{
 
 header ul{
 	list-style:none;
-	width:93%;
+	width:107%;
 	display:none;
-	position:fixed;
-	top: 68px;
-	z-index:2
+	position:absolute;
+	top: 61px;
+	z-index:2;
+	margin-left:-7%;
 }
 
 header ul li{
@@ -44,9 +45,9 @@ header ul a:hover{
 
 header ul a li{
 	text-decoration:none;
-	background-color:white;
-	background:rgba(255,255,255,0.5);
-	color:black;
+	background-color: rgb(34, 33, 33);
+	/*background:rgba(255,255,255,0.5);*/
+	color:white;
 	height: 31px;
 	text-align: center;
 	padding-top: 4px;

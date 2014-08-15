@@ -1,5 +1,5 @@
 angular.module('vctr.services',[])
-	.service('styler',function(){
+	.factory('styler',function(){
 		this.window = {
 			height:$(window).height()
 		}
@@ -7,4 +7,5 @@ angular.module('vctr.services',[])
 		this.set_content = function(){
 			$('.ctnt').css('height',this.content_height + 'px');
 		}
+		return this;
 	});

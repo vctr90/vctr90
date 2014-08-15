@@ -1,9 +1,10 @@
 #content{
 }
 .avatar{
-	position:absolute;
+	/*position:absolute;
 	left:39%;
-	top:64px;
+	top:64px;*/
+	margin-bottom: 4%;
 	width:21%;
 	border-radius:150px;
 	-moz-border-radius:150px;
@@ -17,7 +18,7 @@
 	/*margin-left:2%;
 	margin-top:20px;*/
 	text-align:center;
-	padding-top:22%;
+	padding-top:6%;
 
 	background-color:black;
 	background: rgba(0, 0, 0, 0.82);
@@ -26,16 +27,16 @@
 #extract p.bold_font{
 	color:white;
 	font-weight:bold;
-	font-size:196%;
+	font-size:212%;
 }
 
 #extract p{
 	color:rgb(190, 190, 190);
-	font-size:170%;
+	font-size:159%;
 	font-weight:bold;
 }
 
 #extract{
-	width: 74%;
-	margin-left:12%;	
+	width: 84%;
+	margin-left:8%;	
 }
