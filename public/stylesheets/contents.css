@@ -2,27 +2,40 @@
 }
 .avatar{
 	position:absolute;
-	left:40%;
-	top:25px;
-	width:20%;
+	left:39%;
+	top:64px;
+	width:21%;
 	border-radius:150px;
 	-moz-border-radius:150px;
 	-webkit-border-radius:150px;
 	height:auto;
 }
 .ctnt#resume{
-	margin-left:2%;
-	width:96%;
-	height:70vh;
-	margin-top:20px;
 }
 .ctnt{
+	width:100%;
+	/*margin-left:2%;
+	margin-top:20px;*/
+	text-align:center;
+	padding-top:22%;
+
 	background-color:black;
-	background: rgba(0, 0, 0, 0.85);
+	background: rgba(0, 0, 0, 0.82);
 }
 
-.ctnt p{
+#extract p.bold_font{
 	color:white;
 	font-weight:bold;
-	text-align:center;
+	font-size:196%;
+}
+
+#extract p{
+	color:rgb(190, 190, 190);
+	font-size:170%;
+	font-weight:bold;
+}
+
+#extract{
+	width: 74%;
+	margin-left:12%;	
 }

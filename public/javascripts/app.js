@@ -6,6 +6,6 @@ angular.module('vctr',
 		'ngRoute'
 	])
 	.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
-		$routeProvider.when('/',{templateUrl:'../views/templates/default.jade'})
+		$routeProvider.when('/',{templateUrl:'../views/templates/default.jade',controller:'defaultCtrl'})
 									.when('/blog',{templateUrl:'../views/templates/blog.jade'});
 	}]);
