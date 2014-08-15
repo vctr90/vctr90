@@ -7,5 +7,5 @@ angular.module('vctr',
 	])
 	.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
 		$routeProvider.when('/',{templateUrl:'../views/templates/default.jade',controller:'defaultCtrl'})
-									.when('/blog',{templateUrl:'../views/templates/blog.jade'});
+									.when('/about',{templateUrl:'../views/templates/about.jade',controller:'aboutCtrl'});
 	}]);

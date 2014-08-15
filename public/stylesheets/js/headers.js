@@ -4,7 +4,7 @@
 
 var show_menu = false;
 
-$('#responsive-menu').on('click',function(){
+var display_menu = function(){
 	if(!show_menu){
 		$('header ul').show();
 		show_menu = true;
@@ -12,4 +12,12 @@ $('#responsive-menu').on('click',function(){
 		$('header ul').hide();
 		show_menu = false;
 	}
+}
+
+$('#responsive-menu').on('click',function(){
+	display_menu();
+});
+
+$('header ul a li').on('click',function(){
+	display_menu();
 });
