@@ -7,5 +7,17 @@ angular.module('vctr.services',[])
 		this.set_content = function(){
 			$('.ctnt').css('height',this.content_height + 'px');
 		}
+		this.set_initial_content = function(){
+			$('.ctnt').css('height','initial');
+			$('.ctnt').css('padding-top','20px');
+			$('.ctnt').css('padding-botton','20px');
+		}
+		this.set_content_height = function(){
+			if(this.window.height < 380){
+				this.set_initial_content();
+			}else{
+				this.set_content();
+			}
+		}
 		return this;
 	});

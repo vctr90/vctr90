@@ -13,7 +13,7 @@ exports.templates = function(req,res){
 
 //GET home page.
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'vctr90' });
 });
 
 router.get('*/:route',function(req, res){

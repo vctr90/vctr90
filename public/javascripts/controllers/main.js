@@ -1,7 +1,10 @@
 angular.module('vctr.controllers',[])
 	.controller('defaultCtrl',['$scope','styler',function($scope,styler){
-		styler.set_content();
+		styler.set_content_height();
 	}])
 	.controller('aboutCtrl',['$scope','styler',function($scope,styler){
-		styler.set_content();
+		styler.set_content_height();
+	}])
+	.controller('projectsCtrl',['$scope','styler',function($scope,styler){
+		styler.set_content_height();
 	}]);

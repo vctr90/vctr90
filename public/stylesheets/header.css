@@ -1,3 +1,5 @@
+@media only screen and (min-width: 150px) and (max-width:580px){
+
 .btn#responsive-menu{
 	background-color: rgb(75, 75, 75);
 	margin-top: 10px;
@@ -68,4 +70,24 @@ header ul a li:hover{
 	position: absolute;
 	top:9px;
 	right:2%;
+}
+
+.main_link{
+	text-decoration:none;
+	color:white;
+	font-size: 40px;
+	position:absolute;
+	left: 41%;
+	top:1px;
+	height: 57px;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.main_link:hover{
+	color:black;
+	background-color:white;
+	text-decoration:none;
+}
+
 }
