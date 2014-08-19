@@ -2,6 +2,8 @@
 
 //Show and hide header menu
 
+var screen_width = $('html').width();
+
 var show_menu = false;
 
 var display_menu = function(){
@@ -15,9 +17,13 @@ var display_menu = function(){
 }
 
 $('#responsive-menu').on('click',function(){
-	display_menu();
+	if(screen_width <= 576) display_menu();
 });
 
 $('header ul a li').on('click',function(){
-	display_menu();
+	if(screen_width <= 576) display_menu();
+});
+
+$('header .main_link').on('click',function(){
+	if(screen_width <= 576) display_menu();
 });

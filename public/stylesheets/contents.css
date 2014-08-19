@@ -1,3 +1,31 @@
+.avatar{
+	/*position:absolute;
+	left:39%;
+	top:64px;*/
+	margin-bottom: 4%;
+	width:21%;
+	border-radius:150px;
+	-moz-border-radius:150px;
+	-webkit-border-radius:150px;
+	height:auto;
+}
+.ctnt#resume{
+}
+.ctnt{
+	width:100%;
+	/*margin-left:2%;
+	margin-top:20px;*/
+	text-align:center;
+	padding-top:6%;
+	background-color:black;
+	background: rgba(0, 0, 0, 0.82);
+}
+
+
+
+
+
+
 @media only screen and (min-width: 150px) and (max-width:580px){
 
 #content{
@@ -38,6 +66,15 @@
 
 .pragraph{
 	color:white;
+	text-decoration:none;
+}
+.pragraph:hover{
+	color:white;
+}
+
+.project_links{
+	font-size: 116%;
+	font-weight: bold;
 }
 
 extract{
