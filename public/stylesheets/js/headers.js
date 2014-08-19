@@ -2,10 +2,16 @@
 
 //Show and hide header menu
 
-$(window).resize(function(){
-});
-
 var screen_width = $('html').width();
+
+$(window).resize(function(){
+	screen_width = $('html').width();
+	if(screen_width > 576){
+		$('header ul').show()
+	}else{
+		$('header ul').hide()
+	}
+});
 
 var show_menu = false;
 
@@ -28,5 +34,8 @@ $('header ul a li').on('click',function(){
 });
 
 $('header .main_link').on('click',function(){
-	if(screen_width <= 576) display_menu();
+	if(screen_width <= 576){
+		display_menu();
+		$('header ul').hide();
+	}
 });
