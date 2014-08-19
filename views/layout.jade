@@ -24,24 +24,24 @@ html
 
 
 
-			a(href='/',class='main_link')
-				| /
-
 			//
 				List menu on the rigth
 			ul
 				a(href='#/about')
-					li
+					li(id='about')
 						| About
 				a(href='http://vctr90.github.io',target='_blank')
-					li
+					li(id='blog')
 						| Blog
 				a(href='https://www.dropbox.com/s/3ijxkbnygzs9slm/CVdefinitive.pdf',target='_blank')
-					li
+					li(id='cv')
 						| Cv
 				a(href='#/projects')
-					li
+					li(id='projects')
 						| Projects
+
+			a(href='/',class='main_link')
+				| /
 
 
 		div(id='content',ng-view)

@@ -1,10 +1,13 @@
 angular.module('vctr.controllers',[])
 	.controller('defaultCtrl',['$scope','styler',function($scope,styler){
 		styler.set_content_height();
+		styler.set_selected_el('.main_link');
 	}])
 	.controller('aboutCtrl',['$scope','styler',function($scope,styler){
 		styler.set_content_height();
+		styler.set_selected_el('#about');
 	}])
 	.controller('projectsCtrl',['$scope','styler',function($scope,styler){
 		styler.set_content_height();
+		styler.set_selected_el('#projects');
 	}]);

@@ -19,5 +19,15 @@ angular.module('vctr.services',[])
 				this.set_content();
 			}
 		}
+
+		this.set_selected_el = function(element){
+			$('li').removeClass('black');
+			if(element!=='.main_link'){
+				$('.main_link').removeClass('white');
+				$(element).addClass('black');
+			}else{
+				$(element).addClass('white');
+			}
+		}	
 		return this;
 	});
