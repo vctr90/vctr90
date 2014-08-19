@@ -2,6 +2,9 @@
 
 //Show and hide header menu
 
+$(window).resize(function(){
+});
+
 var screen_width = $('html').width();
 
 var show_menu = false;
