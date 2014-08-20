@@ -21,6 +21,62 @@
 	background: rgba(0, 0, 0, 0.82);
 }
 
+#extract p.bold_font{
+	font-weight:bold;
+	font-size:185%;
+}
+
+#extract{
+	color:rgb(190, 190, 190);
+	font-size:159%;
+	font-weight:bold;
+}
+
+.pragraph{
+	color:white;
+	text-decoration:none;
+}
+.pragraph:hover{
+	color:white;
+}
+
+.project_links{
+	font-size: 116%;
+	font-weight: bold;
+}
+
+extract{
+	width: 84%;
+	margin-left:8%;	
+}
+
+#table{
+	border:solid white;
+	text-align: left;
+	font-weight:initial;
+	font-size: 74%;
+	width:80%;
+	margin-left: 10%;
+}
+
+#table td{
+	padding-top:1%;
+}
+
+.left-cell{
+	width: 23%;
+	font-weight:bold;
+}
+
+.right-cell{
+	
+}
+
+.long_paragraph{
+	padding-left:16%;
+	padding-right:16%;
+}
+
 
 
 
@@ -87,7 +143,8 @@ extract{
 	text-align: left;
 	font-weight:initial;
 	font-size: 74%;
-	width:100%
+	width:100%;
+	margin-left: initial;
 }
 
 #table td{
@@ -101,5 +158,10 @@ extract{
 
 .right-cell{
 	
+}
+
+.long_paragraph{
+	padding-left:initial;
+	padding-right:initial;
 }
 }
