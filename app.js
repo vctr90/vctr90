@@ -29,7 +29,6 @@ app.use('/bower_components',express.static(path.join(__dirname, 'bower_component
 
 app.use('/', routes);
 //Get client side routes
-app.get('*/:route', routes);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
