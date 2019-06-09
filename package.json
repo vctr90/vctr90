@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev" : "npm run build & webpack-dev-server --mode development",
+    "start-dev": "npm run build & webpack-dev-server --mode development",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "file-loader": "^4.0.0"
   }
 }

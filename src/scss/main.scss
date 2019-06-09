@@ -1,3 +1,35 @@
+$orange: #ff9900;
+
 body {
-  background: green;
+  display: grid;
+  height: 100%;
+  margin: 0px;
 }
+
+/* menu phone portrait */
+
+#menu {
+  display: flex;
+  padding: 10px 10px 10px 0px;
+
+  #main-box {
+    flex: 4;
+    background: $orange;
+  }
+
+  #toggle-button {
+    flex: 1;
+    width: 100%;
+  }
+
+  #toggle-button:after {
+    background-image: url('../../public/assets/menu_toggle_close.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+/* end of menu phone portrait */
