@@ -4,16 +4,31 @@ body {
   display: grid;
   height: 100%;
   margin: 0px;
+  font-family: 'consolas', 'arial';
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+      text-align: center;      
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 /* menu phone portrait */
 
 #menu {
   display: flex;
-  padding: 10px 10px 10px 0px;
+  padding: 40px 40px 40px 0px;
 
   #main-box {
-    flex: 4;
+    flex: 6;
     background: $orange;
   }
 
@@ -29,6 +44,41 @@ body {
     content: '';
     display: block;
     padding-bottom: 100%;
+  }
+
+  #avatar-area {
+    display: flex;
+    justify-content: center;
+
+    #avatar {
+      width: 50%;
+      margin: 30px 0px 120px 0px;
+    }
+
+    #avatar:after {
+      background-image: url('../../public/assets/avatar_mobile_portratit.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  #menu-area {
+    color: white;
+    font-size: 4em;
+
+    ul {
+      li {
+        padding: 30px 0px;
+      }
+
+      .selected {
+        color: initial;
+        background: white;
+      }
+    }
   }
 }
 
