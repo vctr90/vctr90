@@ -1,0 +1,19 @@
+{
+  "name": "vctr90",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vctr90/vctr90.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vctr90/vctr90/issues"
+  },
+  "homepage": "https://github.com/vctr90/vctr90#readme"
+}
