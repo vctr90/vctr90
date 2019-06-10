@@ -36,6 +36,10 @@ body {
   .show-menu {
     transform: none!important;
     @include menu-toggle-transition;
+
+    #toggle-button:after {
+      background-image: url('../../public/assets/menu_toggle_close.png')!important;
+    }
   }
 
   #menu {
