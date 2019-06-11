@@ -36,6 +36,7 @@ body {
     -webkit-transition: $menu-toggle-transition;
     transition: $menu-toggle-transition;
   }
+  scroll-behavior: smooth;
 
   /* menu phone portrait */
 
@@ -103,7 +104,7 @@ body {
 
       ul {
         li {
-          padding: 30px 0px;
+          padding: 0.5vh 0px;
         }
 
         .selected {
@@ -132,7 +133,15 @@ body {
     }
 
     #hi {
-      background: green;
+      background: white;
+      display: grid;
+      grid-template-rows: 3fr 1fr;
+
+      #presentation-img {
+        background-image: url('../../public/assets/me.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     }
     
     #myself {
