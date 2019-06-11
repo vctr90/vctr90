@@ -1,8 +1,16 @@
-const $menuToggle = document.getElementById('toggle-button');
+const $menuToggle = document.querySelector('#toggle-button');
+const $menu = document.querySelector('#menu');
+const $menuElements = $menu.querySelectorAll('ul li');
 
-const triggerToggle = (event) => {
-    const $menu = event.currentTarget.parentElement;
-    $menu.classList.toggle('show-menu');
+const triggerMenuToggle = () => $menu.classList.toggle('show-menu');
+
+const navigateToSection = (event) => {
+   cleanMenuSelection();
+   event.currentTarget.classList.toggle('selected');
+   triggerMenuToggle(); 
 };
 
-$menuToggle.onclick = triggerToggle;
+const cleanMenuSelection = () => $menuElements.forEach(($menuElement) => $menuElement.classList.remove('selected'));
+
+$menuToggle.onclick = triggerMenuToggle;
+$menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
