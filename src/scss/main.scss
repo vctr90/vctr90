@@ -25,6 +25,11 @@ body {
 
     }
   }
+
+  .regular-page-title {
+    font-size: 4em;
+    padding: 1.5em 0px;
+  }
 }
 
 #content {
@@ -130,6 +135,7 @@ body {
 
     section {
       min-height: 100vh;
+      text-align: center;
     }
 
     #hi {
@@ -140,7 +146,10 @@ body {
       #presentation-img {
         background-image: url('../../public/assets/me.png');
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
     
