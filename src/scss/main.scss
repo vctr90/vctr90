@@ -22,13 +22,29 @@ body {
 
     li {
       text-align: center;      
-
     }
   }
 
   .regular-page-title {
     font-size: 4em;
-    padding: 1.5em 0px;
+    padding: 0.7em 0px;
+  }
+
+  #presentation-caption {
+    .regular-page-title {
+      padding: 1.5em 0px;
+    }
+  }
+
+  hr {
+    border-top: solid 18px $orange;
+    width: 120px;
+  }
+
+  .content-container {
+    padding: 39px 1.8em;
+    font-size: 2.8em;
+    text-align: justify;
   }
 }
 
@@ -141,7 +157,7 @@ body {
     #hi {
       background: white;
       display: grid;
-      grid-template-rows: 3fr 1fr;
+      grid-template-rows: 1fr 1fr;
 
       #presentation-img {
         background-image: url('../../public/assets/me.png');
