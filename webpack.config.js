@@ -10,6 +10,9 @@ module.exports = {
     host: config.HOST,
     overlay: true
   },
+  node: {
+    fs: 'empty'
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
