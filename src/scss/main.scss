@@ -231,15 +231,33 @@ body {
 
     #contact {
       .contact-container {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr;
 
-        .contact-link {
-
+        div {
+          display: flex;
+          justify-content: center;
         }
 
-        .contact-logo {
+        .contact-link {
+        }
 
+        .contact-logo-container {
+          margin: 1.8em 0px;
+
+          .contact-logo {
+            width: 36%;
+          }
+
+          .contact-logo:after {
+            background-image: url('../../public/assets/email_icon.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            content: '';
+            display: block;
+            padding-bottom: 100%; 
+            flex: 1;
+          }
         }
       }
     }
