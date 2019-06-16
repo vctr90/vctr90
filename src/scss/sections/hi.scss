@@ -1,15 +1,14 @@
-    #hi {
-      background: $font_color_one;
-      display: grid;
-      grid-template-rows: 70vh 1fr;
+#hi {
+    background: $font_color_one;
+    display: grid;
+    grid-template-rows: 70vh 1fr;
 
-      #presentation-img {
-        background-image: url('../../public/assets/me.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    #presentation-img {
+    background-image: url('../../public/assets/me.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
-    
+}
