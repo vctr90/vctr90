@@ -1,0 +1,47 @@
+body {
+  height: 100%;
+  margin: 0px;
+  font-family: 'consolas', 'arial';
+  display: grid;
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:visited {
+      color: inherit;
+    }
+
+    li {
+      text-align: center;
+    }
+  }
+
+  .regular-page-title {
+    font-size: 4em;
+    padding: 0.7em 3em;
+  }
+
+  #presentation-caption {
+    .regular-page-title {
+      padding: 1.5em 0px;
+    }
+  }
+
+  hr {
+    border-top: solid 18px $background_color_one;
+    width: 120px;
+  }
+
+  .content-container {
+    padding: 39px 1.8em;
+    font-size: 2.8em;
+    text-align: justify;
+  }
+}

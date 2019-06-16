@@ -1,0 +1,35 @@
+    #portfolio {
+      background-color: $background_color_three;
+      color: $font_color_one;
+
+      .reference-metadata {
+        .reference-title {
+          padding-bottom: 1em;
+        }
+
+        padding: 0px 0.7em;
+      }
+
+      .reference-link {
+        background-color: $background_color_one;
+        display: flex;
+        justify-content: center;
+        padding: 0.7em 0px;
+        margin: 0.6em 0px;
+        align-items: center;
+
+        .reference-icon {
+          width: 7%;
+          padding: 0px 1%;
+        }
+
+        .reference-icon:after {
+          background-image: url('../../public/assets/github_reference_logo.png');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          content: '';
+          display: block;
+          padding-bottom: 100%;
+        }
+      }
+    }
