@@ -45,3 +45,32 @@ body {
     text-align: justify;
   }
 }
+
+/* iPhone X portrait and landscape */
+@media only screen 
+  and (min-device-width: $iphone_x_min_width) 
+  and (max-device-width: $iphone_x_max_width) {
+    body {
+        font-size: 0.5em;
+
+        hr {
+            border-top: solid 11px $background_color_one;
+            width: 71px;
+        }
+    }
+
+} 
+
+/* iPhone 5/SE portrait and landscape */
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_5SE_max_width) {
+    body {
+        font-size: 0.3em;
+
+        hr {
+            border-top: solid 11px $background_color_one;
+            width: 71px;
+        }
+    }
+} 

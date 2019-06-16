@@ -2,11 +2,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  @mixin menu-toggle-transition {
-    $menu-toggle-transition:  transform 0.2s;
-    -webkit-transition: $menu-toggle-transition;
-    transition: $menu-toggle-transition;
-  }
   scroll-behavior: smooth;
 
   @import './menu.scss';

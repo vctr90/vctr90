@@ -1,5 +1,11 @@
   /* menu phone portrait */
 
+  @mixin menu-toggle-transition {
+    $menu-toggle-transition:  transform 0.2s;
+    -webkit-transition: $menu-toggle-transition;
+    transition: $menu-toggle-transition;
+  }
+
   .show-menu {
     transform: none!important;
     @include menu-toggle-transition;
@@ -79,3 +85,33 @@
   }
 
   /* end of menu phone portrait */
+
+/* iPhone X portrait and landscape */
+@media only screen 
+  and (min-device-width: $iphone_x_min_width) 
+  and (max-device-width: $iphone_x_max_width) {
+    #menu {
+      transform: translate(-73%);
+
+      #avatar-area {
+        #avatar {
+          margin: 30px 0px 61px 0px;
+        }
+      }
+    }
+} 
+
+/* iPhone 5/SE portrait and landscape */
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_5SE_max_width) {
+    #menu {
+      transform: translate(-73%);
+
+      #avatar-area {
+        #avatar {
+          margin: 30px 0px 61px 0px;
+        }
+      }
+    }
+} 
