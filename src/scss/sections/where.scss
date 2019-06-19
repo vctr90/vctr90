@@ -20,3 +20,25 @@
     }
   }
 }
+
+
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_x_max_width)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    #where {
+      .sub-section-container {
+        display: flex;
+
+        .vertical-half-container {
+          flex: 1;
+        }
+
+        iframe {
+          flex: 1;
+          height: 100vh;
+        }
+      }
+    }
+  }
