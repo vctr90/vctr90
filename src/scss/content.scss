@@ -35,3 +35,19 @@
   /* end of main content */
   }
 }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) {
+    #content {
+      display: block;
+
+      #main-content {
+        width: 75%;
+        grid-column: unset!important;
+        float: right;
+      }
+    }
+  }

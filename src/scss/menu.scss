@@ -173,3 +173,64 @@
       }
     }
 }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) { 
+    .show-menu {
+      #toggle-button:after {
+      }
+    }
+
+    #menu {
+      padding: 0px;
+      transform: unset;
+      width: 25%;
+      font-size: 0.4em;
+
+      #main-box {
+        #avatar-area {
+          display: block;
+          justify-content: unset;
+
+          #avatar {
+            margin: 0px;
+            width: 12%;
+            position: fixed;
+            left: 19%;
+            top: 5vh;
+          }
+        }
+
+        #menu-area {
+          ul {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+
+            a {
+              display: flex;
+              flex: 1;
+
+              li {
+                padding: 0px;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+
+      #toggle-button {
+        display: none;
+      }
+
+      #toggle-button:after {
+      }
+    }
+}
