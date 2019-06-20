@@ -27,3 +27,24 @@
           }
       }
 }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) {
+      #experience {
+          display: flex;
+
+          .sub-section-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 0.4fr 1fr;
+            padding-left: 5%;
+
+            .title-container {
+              grid-column: 1/4;
+            }
+          }
+      }
+  }

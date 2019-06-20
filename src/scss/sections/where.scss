@@ -42,3 +42,15 @@
       }
     }
   }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) {
+    #where {
+      .sub-section-container {
+        grid-template-rows: 1fr 2fr;
+      }
+    }
+  }

@@ -27,3 +27,29 @@
         }
     }
   }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) {
+    #hi {
+      grid-template-rows: 100vh 1fr;
+
+      #presentation-img {
+          background-image: url('../../public/assets/me-desktop.png');
+
+          #presentation-caption {
+            .regular-page-title {
+              padding: 0.5em 0px;
+            }
+          }
+      }
+
+      #about {
+        .content-container {
+          padding-left: 11%;
+        }
+      }
+    }
+  }

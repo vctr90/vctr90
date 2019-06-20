@@ -35,26 +35,19 @@
     }
 }
 
-
-/* devices from 320px to 812px width landscape */
-
-@media only screen 
-  and (min-device-width: $iphone_5SE_min_width) 
-  and (max-device-width: $iphone_x_max_width)
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) {
-      #contact {
-          .sub-section-container {
+@mixin conatct-landscape {
+    #contact {
+        .sub-section-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 0.4fr 1fr;
-          }
+            }
 
-          .title-container {
+            .title-container {
             grid-column: 1/4;
-          }
+            }
 
-          .content-container {
+            .content-container {
             padding: 16px 0px;
 
             .contact-container {
@@ -68,6 +61,28 @@
                     }
                 }
             }
-          }
+        }
+    }
+}
+
+/* devices from 320px to 812px width landscape */
+
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_x_max_width)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+      @include conatct-landscape();
+  }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) {
+      @include conatct-landscape();
+      #contact {
+        padding-left: 4%;
+        min-height: unset;
       }
   }

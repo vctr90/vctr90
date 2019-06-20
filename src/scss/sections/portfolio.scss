@@ -34,15 +34,9 @@
     }
 }
 
-/* devices from 320px to 812px width landscape */
-
-@media only screen 
-  and (min-device-width: $iphone_5SE_min_width) 
-  and (max-device-width: $iphone_x_max_width)
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) {
-      #portfolio {
-          .sub-section-container {
+@mixin landscape-view {
+    #portfolio {
+        .sub-section-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: 0.4fr repeat(2, 1fr);
@@ -56,7 +50,24 @@
                 padding-left: 30%;
                 padding-right: 30%;
             }
-          }
+        }
+    }
+}
 
-      }
+/* devices from 320px to 812px width landscape */
+
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_x_max_width)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+      @include landscape-view();
+  }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) {
+      @include landscape-view();
   }
