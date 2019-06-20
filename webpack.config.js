@@ -1,5 +1,6 @@
 const path = require('path');
 const config = require('./config');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -28,5 +29,11 @@ module.exports = {
         use: ['file-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
+  ]
 };
