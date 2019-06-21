@@ -1,16 +1,8 @@
 const path = require('path');
-const config = require('./config');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
   entry: './src/js/index.js',
-  watch: true,
-  devServer: {
-    port: config.PORT,
-    host: config.HOST,
-    overlay: true
-  },
   node: {
     fs: 'empty'
   },
