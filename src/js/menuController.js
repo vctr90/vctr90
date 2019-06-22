@@ -9,6 +9,7 @@ let clickedMenu = false;
 const navigateToSection = (event) => {
    cleanMenuSelection();
    event.currentTarget.classList.toggle('selected');
+  setClicked();
    triggerMenuToggle(); 
 };
 
