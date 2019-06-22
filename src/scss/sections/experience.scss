@@ -22,17 +22,19 @@
 
 @mixin company-section-arrangement {
   .content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    .company-name {
-      flex: 1;
-    }
+      .company-name {
+        flex: 1;
+      }
 
-    .company-logo {
-      flex: 3;
-      width: 84%;
+      .company-logo {
+        flex: 3;
+        width: 84%;
+      }
     }
   }
 }
