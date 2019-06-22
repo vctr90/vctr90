@@ -9,12 +9,15 @@ let clickedMenu = false;
 const navigateToSection = (event) => {
    cleanMenuSelection();
    event.currentTarget.classList.toggle('selected');
-   clickedMenu = true;
    triggerMenuToggle(); 
+};
+
+const setClicked = () => {
+   clickedMenu = true;
    setTimeout(() => {
       clickedMenu = false;
    }, 500)
-};
+}
 
 const cleanMenuSelection = () => $menuElements.forEach(($menuElement) => $menuElement.classList.remove('selected'));
 
@@ -32,6 +35,5 @@ $(window).scroll(() => {
             $('#menu a li').eq(currentSectionIndex).addClass('selected');
          }
       });
-
    }
 }).scroll();
