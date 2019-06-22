@@ -1,50 +1,83 @@
 #experience {
-    background: $background_color_two;
-    color: $font_color_one;
-    justify-content: center;
+  background: $background_color_two;
+  color: $font_color_one;
+  justify-content: center;
 
-    .content-container {
+  .content-container {
     text-align: center!important;
+
+    #company-logo-0 {
+      background-image: url('../../public/assets/logo-bix.png');
     }
+
+    #company-logo-1 {
+      background-image: url('../../public/assets/barilliance.png');
+    }
+
+    #company-logo-2 {
+      background-image: url('../../public/assets/enriva.png');
+    }
+  }
+}
+
+@mixin company-section-arrangement {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .company-name {
+      flex: 1;
+    }
+
+    .company-logo {
+      flex: 3;
+      width: 84%;
+    }
+  }
 }
 
 /* devices from 320px to 812px width landscape */
 
 @media only screen 
-  and (min-device-width: $iphone_5SE_min_width) 
-  and (max-device-width: $iphone_x_max_width)
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-      #experience {
-          .sub-section-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 1fr;
-          }
+and (min-device-width: $iphone_5SE_min_width) 
+and (max-device-width: $iphone_x_max_width)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) { 
+  #experience {
+    .sub-section-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
 
-          .title-container {
-              grid-column: 1/4;
-          }
-      }
+      @include company-section-arrangement();
+    }
+
+    .title-container {
+      grid-column: 1/4;
+    }
+  }
 }
 
 /* devices from minimun of 813px width landscape */
 
 @media only screen 
-  and (min-device-width: $desktop_min_width) 
-  and (orientation: landscape) {
-      #experience {
-          display: flex;
+and (min-device-width: $desktop_min_width) 
+and (orientation: landscape) {
+  #experience {
+    display: flex;
 
-          .sub-section-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 0.4fr 1fr;
-            padding-left: 5%;
+    .sub-section-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 0.4fr 1fr;
+      padding-left: 5%;
 
-            .title-container {
-              grid-column: 1/4;
-            }
-          }
+      .title-container {
+        grid-column: 1/4;
       }
+
+      @include company-section-arrangement();
+    }
   }
+}
