@@ -18,8 +18,25 @@ module.exports = {
       },
       {
         test:  /\.(png|jpe?g|gif)$/,
-        use: ['file-loader']
-      }
+        /*use: ['file-loader']*/
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: 'dist/'
+            }
+          }
+        ]
+      }/*,
+      {
+        test:  /\.(png|jpe?g|gif)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8000
+          }
+        }]
+      }*/
     ]
   },
   plugins: [
