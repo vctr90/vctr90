@@ -18,7 +18,6 @@ module.exports = {
       },
       {
         test:  /\.(png|jpe?g|gif)$/,
-        /*use: ['file-loader']*/
         use: [
           {
             loader: 'file-loader',
@@ -27,6 +26,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.ico$/,
+        loader: 'file-loader?name=[name].[ext]'
       }
     ]
   },
