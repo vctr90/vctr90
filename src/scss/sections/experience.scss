@@ -22,6 +22,8 @@
 
 @mixin company-section-arrangement {
   .content-container {
+    display: flex;
+
     a {
       display: flex;
       flex-direction: column;
