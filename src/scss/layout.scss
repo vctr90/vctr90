@@ -1,0 +1,97 @@
+body {
+  height: 100%;
+  margin: 0px;
+  font-family: 'consolas', 'arial';
+  display: grid;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    a {
+      color: inherit;
+    }
+
+    li {
+      text-align: center;
+    }
+  }
+
+  .regular-page-title {
+    font-size: 4em;
+    padding: 0.7em 3em;
+  }
+
+  #presentation-caption {
+    .regular-page-title {
+      padding: 1.5em 0px;
+    }
+  }
+
+  hr {
+    border-top: solid 18px $background_color_one;
+    width: 120px;
+  }
+
+  .content-container {
+    padding: 17px 6%;
+    font-size: 2.8em;
+    text-align: justify;
+  }
+}
+
+/* iPhone X portrait and landscape */
+@media only screen 
+  and (min-device-width: $iphone_x_min_width) 
+  and (max-device-width: $iphone_x_max_width) {
+    body {
+        font-size: 0.5em;
+
+        hr {
+            border-top: solid 11px $background_color_one;
+            width: 71px;
+        }
+    }
+
+} 
+
+/* iPhone 5/SE portrait and landscape */
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_5SE_max_width) {
+    body {
+        font-size: 0.3em;
+
+        hr {
+            border-top: solid 11px $background_color_one;
+            width: 71px;
+        }
+    }
+}
+
+/* devices from 320px to 812px width landscape */
+
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_x_max_width)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    body {
+      .regular-page-title {
+        padding: 0.5em 3em;
+      }
+
+      .content-container {
+        padding: 20px 1.8em;
+      }
+    }
+}
