@@ -1,0 +1,12 @@
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":5393,"time":"2019-10-27T13:14:59.090Z","msg":"Using New Relic for Node.js. Agent version: 5.13.1; Node version: v10.13.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":5393,"time":"2019-10-27T13:14:59.097Z","msg":"Module not enabled in configuration; not starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":8036,"time":"2019-10-27T13:22:06.993Z","msg":"Using New Relic for Node.js. Agent version: 5.13.1; Node version: v10.13.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":8036,"time":"2019-10-27T13:22:06.997Z","msg":"Module not enabled in configuration; not starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":9048,"time":"2019-10-27T13:24:57.801Z","msg":"Using New Relic for Node.js. Agent version: 5.13.1; Node version: v10.13.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":9048,"time":"2019-10-27T13:24:57.806Z","msg":"Module not enabled in configuration; not starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":10212,"time":"2019-10-27T13:27:50.743Z","msg":"Using New Relic for Node.js. Agent version: 5.13.1; Node version: v10.13.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":10212,"time":"2019-10-27T13:27:50.748Z","msg":"Module not enabled in configuration; not starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":13408,"time":"2019-10-27T13:37:37.890Z","msg":"Using New Relic for Node.js. Agent version: 5.13.1; Node version: v10.13.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":13408,"time":"2019-10-27T13:37:37.895Z","msg":"Module not enabled in configuration; not starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":13552,"time":"2019-10-27T13:38:03.246Z","msg":"Using New Relic for Node.js. Agent version: 5.13.1; Node version: v10.13.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ubuntuserver","pid":13552,"time":"2019-10-27T13:38:03.250Z","msg":"Module not enabled in configuration; not starting."}
