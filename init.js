@@ -1,1 +1,1 @@
-require('newrelic')
+require('newrelic');
