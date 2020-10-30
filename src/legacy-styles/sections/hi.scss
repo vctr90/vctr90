@@ -1,0 +1,56 @@
+#hi {
+    background: $font_color_one;
+    display: grid;
+    grid-template-rows: 70vh 1fr;
+
+    #presentation-img {
+        background-image: url('../../public/assets/me.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen 
+  and (min-device-width: $iphone_5SE_min_width) 
+  and (max-device-width: $iphone_x_max_width)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    #hi {
+    grid-template-rows: 100vh;
+    grid-template-columns: 1fr 1fr;
+
+        #about {
+            overflow: auto;
+        }
+    }
+  }
+
+/* devices from minimun of 813px width landscape */
+
+@media only screen 
+  and (min-device-width: $desktop_min_width) 
+  and (orientation: landscape) {
+    #hi {
+      grid-template-rows: 100vh 1fr;
+
+      #presentation-img {
+          background-image: url('../../public/assets/me-desktop.jpg');
+
+          #presentation-caption {
+            .regular-page-title {
+              color: $font_color_one;
+              padding: 0.5em 0px;
+            }
+          }
+      }
+
+      #about {
+        .content-container {
+          padding-left: 11%;
+        }
+      }
+    }
+  }
