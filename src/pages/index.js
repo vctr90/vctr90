@@ -18,6 +18,49 @@ const Separator = () => (
   </div>
 );
 
+const MenuController = () => {
+  const $menuToggle = document.querySelector('#toggle-button');
+  const $menu = document.querySelector('#menu');
+  const $menuElements = $menu.querySelectorAll('ul li');
+
+  const triggerMenuToggle = () => $menu.classList.toggle('show-menu');
+
+  let clickedMenu = false;
+
+  const navigateToSection = (event) => {
+    cleanMenuSelection();
+    event.currentTarget.classList.toggle('selected');
+    setClicked();
+    triggerMenuToggle();
+  };
+
+  const setClicked = () => {
+    clickedMenu = true;
+    setTimeout(() => {
+      clickedMenu = false;
+    }, 500)
+  }
+
+  const cleanMenuSelection = () => $menuElements.forEach(($menuElement) => $menuElement.classList.remove('selected'));
+
+  $menuToggle.onclick = triggerMenuToggle;
+  $menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
+
+  $(window).scroll(() => {
+    if (!clickedMenu) {
+      const scrollDistance = $(window).scrollTop();
+
+      const $sections = $('.section');
+      $sections.each(function (currentSectionIndex) {
+        if ($(this).position().top <= scrollDistance) {
+          $('#menu a li.selected').removeClass('selected');
+          $('#menu a li').eq(currentSectionIndex).addClass('selected');
+        }
+      });
+    }
+  }).scroll();
+};
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -141,7 +184,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 In the industry
             </div>
-            <Separator />
+              <Separator />
             </div>
             <div className="content-container">
               <a href="https://bixlabs.com/" target="_blank">
@@ -178,7 +221,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 Tech
             </div>
-            <Separator />
+              <Separator />
             </div>
             <div className="content-container">
               <div className="company-logo" id="technologies-logo-0">
@@ -208,7 +251,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 Portfolio
             </div>
-            <Separator />
+              <Separator />
             </div>
             <div className="content-container">
               <div className="reference-metadata">
@@ -258,7 +301,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 Contact
             </div>
-            <Separator />
+              <Separator />
             </div>
             <div className="content-container">
               <a href="mailto:victor@vctrdev.com">
@@ -299,7 +342,7 @@ const IndexPage = () => (
                 <div className="regular-page-title">
                   Where
               </div>
-              <Separator />
+                <Separator />
               </div>
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199026.25819764996!2d-79.3013485648003!3d43.13278493916889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d35054bb6a5a4b%3A0x37563636c082837!2sSt.+Catharines%2C+ON!5e0!3m2!1sen!2sca!4v1560639147081!5m2!1sen!2sca" width={600} height={450} frameBorder={0} style={{ border: 0 }} allowFullScreen />
