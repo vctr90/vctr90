@@ -11,7 +11,7 @@
     @include menu-toggle-transition;
 
     #toggle-button:after {
-      background-image: url('../../public/assets/menu_toggle_close.png')!important;
+      background-image: url('../images/menu_toggle_close.png')!important;
     }
   }
 
@@ -40,7 +40,7 @@
     }
 
     #toggle-button:after {
-      background-image: url('../../public/assets/menu_toggle_open.png');
+      background-image: url('../images/menu_toggle_open.png');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       content: '';
@@ -58,7 +58,7 @@
       }
 
       #avatar:after {
-        background-image: url('../../public/assets/avatar_mobile_portratit.png');
+        background-image: url('../images/avatar_mobile_portratit.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         content: '';
@@ -125,7 +125,7 @@
 
     .show-menu {
       #toggle-button:after {
-        background-image: url('../../public/assets/menu_toggle_close_vertical.png')!important;
+        background-image: url('../images/menu_toggle_close_vertical.png')!important;
       }
     }
 
@@ -169,7 +169,7 @@
       }
 
       #toggle-button:after {
-        background-image: url('../../public/assets/menu_toggle_open_vertical.png');
+        background-image: url('../images/menu_toggle_open_vertical.png');
       }
     }
 }
