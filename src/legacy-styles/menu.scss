@@ -179,11 +179,6 @@
 @media only screen 
   and (min-device-width: $desktop_min_width) 
   and (orientation: landscape) { 
-    .show-menu {
-      #toggle-button:after {
-      }
-    }
-
     #menu {
       padding: 0px;
       transform: unset;
