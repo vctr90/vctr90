@@ -6,6 +6,19 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import '../legacy-styles/main.scss';
 
+const Separator = () => (
+  <div
+    style={{
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center'
+    }}
+  >
+    <hr style={{ margin: 0 }} />
+  </div>
+);
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -59,7 +72,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 Victor Rivas
             </div>
-              <hr />
+              <Separator />
               <div className="regular-page-title">
                 Software Developer
             </div>
@@ -71,7 +84,7 @@ const IndexPage = () => (
                 <div className="regular-page-title">
                   Hi!
               </div>
-                <hr />
+                <Separator />
               </div>
               <div className="content-container">
                 Hello, I am Victor Rivas and I love to transform electricity into code that delivers value to my users.
@@ -82,7 +95,7 @@ const IndexPage = () => (
                 <div className="regular-page-title">
                   About!
               </div>
-                <hr />
+                <Separator />
               </div>
               <div className="content-container">
                 I am a Venezuelan software developer who lives in Canada. I have been involved in projects of different
@@ -100,7 +113,7 @@ const IndexPage = () => (
                 <div className="regular-page-title">
                   Developer
               </div>
-                <hr />
+                <Separator />
               </div>
               <div className="content-container">
                 As you may have guessed I am a Software Developer, specialized on web technologies.
@@ -113,7 +126,7 @@ const IndexPage = () => (
                 <div className="regular-page-title">
                   Project Manager
               </div>
-                <hr />
+                <Separator />
               </div>
               <div className="content-container">
                 Just in between us... I have also run as a project manager. It is amazing to see how
@@ -129,7 +142,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 In the industry
             </div>
-              <hr />
+            <Separator />
             </div>
             <div className="content-container">
               <a href="https://bixlabs.com/" target="_blank">
@@ -166,7 +179,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 Tech
             </div>
-              <hr />
+            <Separator />
             </div>
             <div className="content-container">
               <div className="company-logo" id="technologies-logo-0">
@@ -196,7 +209,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 Portfolio
             </div>
-              <hr />
+            <Separator />
             </div>
             <div className="content-container">
               <div className="reference-metadata">
@@ -246,7 +259,7 @@ const IndexPage = () => (
               <div className="regular-page-title">
                 Contact
             </div>
-              <hr />
+            <Separator />
             </div>
             <div className="content-container">
               <a href="mailto:victor@vctrdev.com">
@@ -287,7 +300,7 @@ const IndexPage = () => (
                 <div className="regular-page-title">
                   Where
               </div>
-                <hr />
+              <Separator />
               </div>
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199026.25819764996!2d-79.3013485648003!3d43.13278493916889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d35054bb6a5a4b%3A0x37563636c082837!2sSt.+Catharines%2C+ON!5e0!3m2!1sen!2sca!4v1560639147081!5m2!1sen!2sca" width={600} height={450} frameBorder={0} style={{ border: 0 }} allowFullScreen />
