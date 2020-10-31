@@ -38,13 +38,13 @@ body {
   }
 
   hr {
+    border: 0px;
     border-top: solid 18px $background_color_one;
     width: 120px;
   }
 
   .content-container {
-    padding: 17px 6%;
-    padding: 17px 6% 17px 10%;
+    padding: 45px 6% 17px 10%;
     font-size: 2.8em;
     text-align: justify;
   }

@@ -11,9 +11,6 @@
         justify-content: center;
       }
 
-      .contact-link {
-      }
-
       .contact-logo-container {
         margin: 1.8em 0px;
 
@@ -31,15 +28,15 @@
         }
 
         #contact-logo-0:after {
-          background-image: url('../../public/assets/email_icon.png');
+          background-image: url('../images/email_icon.png');
         }
 
         #contact-logo-1:after {
-          background-image: url('../../public/assets/twitter.png');
+          background-image: url('../images/twitter.png');
         }
 
         #contact-logo-2:after {
-          background-image: url('../../public/assets/github.png');
+          background-image: url('../images/github.png');
         }
       }
     }
