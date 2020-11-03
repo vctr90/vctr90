@@ -1,6 +1,34 @@
 /// <reference types="cypress" />
 
 context('Navigation', () => {
+  describe('Menu navigation', () => {
+    beforeEach(() => {
+      cy.visit('localhost:8000');
+    });
+
+    describe('Correct menu elements navigation', () => {
+      beforeEach(() => {
+        cy.get('a[href="#experience"]')
+          .click();
+      });
+
+      it('Should have the correct url', () => {
+        cy.url().should('include', '/#experience');
+      });
+
+      it('Should select the correct menu element', () => {
+        cy.get('a[href="#experience"]').should('have.class', 'selected');
+      });
+
+      it('Should display the correct element on the screen', () => {
+        cy.get('#experience')
+          .should('be.visible');
+      });
+    });
+  });
+});
+
+context.skip('Navigation', () => {
   beforeEach(() => {
     cy.visit('https://example.cypress.io')
     cy.get('.navbar-nav').contains('Commands').click()
@@ -43,14 +71,14 @@ context('Navigation', () => {
     // Pass options to the visit
     cy.visit('https://example.cypress.io/commands/navigation', {
       timeout: 50000, // increase total time for the visit to resolve
-      onBeforeLoad (contentWindow) {
+      onBeforeLoad(contentWindow) {
         // contentWindow is the remote page's window object
         expect(typeof contentWindow === 'object').to.be.true
       },
-      onLoad (contentWindow) {
+      onLoad(contentWindow) {
         // contentWindow is the remote page's window object
         expect(typeof contentWindow === 'object').to.be.true
       },
     })
-    })
+  })
 })
