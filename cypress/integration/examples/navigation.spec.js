@@ -9,10 +9,6 @@ context('Navigation', () => {
     describe('Default route', () => {
       const menuElemetnToTest = 'hi';
 
-      it('Should have the correct url', () => {
-        cy.url().should('include', `/#${menuElemetnToTest}`);
-      });
-
       it('Should select the correct menu element', () => {
         cy.get(`a[href="#${menuElemetnToTest}"] li`)
           .should('have.class', 'selected');

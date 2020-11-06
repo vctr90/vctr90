@@ -49,7 +49,7 @@ const Menu = () => {
         <div id="menu-area">
           <ul>
             <a href="#hi">
-              <li>
+              <li className='selected'>
                 HI!
               </li>
             </a>
