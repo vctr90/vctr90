@@ -5,6 +5,7 @@ const InitializeMenuController = () => {
   const $menuToggle = document.querySelector('#toggle-button');
   const $menu = document.querySelector('#menu');
   const $menuElements = $menu.querySelectorAll('ul li');
+  const manualScrollEvent = 'DOMMouseScroll mousewheel';
 
   const triggerMenuToggle = () => $menu.classList.toggle('show-menu');
 
@@ -13,23 +14,15 @@ const InitializeMenuController = () => {
   const navigateToSection = (event) => {
     cleanMenuSelection();
     event.currentTarget.classList.toggle('selected');
-    setClicked();
     triggerMenuToggle();
   };
-
-  const setClicked = () => {
-    clickedMenu = true;
-    setTimeout(() => {
-      clickedMenu = false;
-    }, 500)
-  }
 
   const cleanMenuSelection = () => $menuElements.forEach(($menuElement) => $menuElement.classList.remove('selected'));
 
   $menuToggle.onclick = triggerMenuToggle;
   $menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
 
-  $(window).scroll(() => {
+  $(window).on(manualScrollEvent, () => {
     if (!clickedMenu) {
       const scrollDistance = $(window).scrollTop();
 
@@ -41,7 +34,7 @@ const InitializeMenuController = () => {
         }
       });
     }
-  }).scroll();
+  });
 };
 
 const Menu = () => {
