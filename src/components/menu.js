@@ -9,7 +9,6 @@ const InitializeMenuController = () => {
 
   const triggerMenuToggle = () => $menu.classList.toggle('show-menu');
 
-  let clickedMenu = false;
 
   const navigateToSection = (event) => {
     cleanMenuSelection();
@@ -23,17 +22,15 @@ const InitializeMenuController = () => {
   $menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
 
   $(window).on(manualScrollEvent, () => {
-    if (!clickedMenu) {
-      const scrollDistance = $(window).scrollTop();
+    const scrollDistance = $(window).scrollTop();
 
-      const $sections = $('.section');
-      $sections.each(function (currentSectionIndex) {
-        if ($(this).position().top <= scrollDistance) {
-          $('#menu a li.selected').removeClass('selected');
-          $('#menu a li').eq(currentSectionIndex).addClass('selected');
-        }
-      });
-    }
+    const $sections = $('.section');
+    $sections.each(function (currentSectionIndex) {
+      if ($(this).position().top <= scrollDistance) {
+        $('#menu a li.selected').removeClass('selected');
+        $('#menu a li').eq(currentSectionIndex).addClass('selected');
+      }
+    });
   });
 };
 
