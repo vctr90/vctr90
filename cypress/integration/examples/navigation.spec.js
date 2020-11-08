@@ -16,15 +16,15 @@ context('Navigation', () => {
       });
 
       describe('Default route', () => {
-        const menuElemetnToTest = 'hi';
+        const menuElementToTest = 'hi';
 
         it('Should select the correct menu element', () => {
-          cy.get(`a[href="#${menuElemetnToTest}"] li`)
+          cy.get(`a[href="#${menuElementToTest}"] li`)
             .should('have.class', 'selected');
         });
 
         it('Should display the correct element on the screen', () => {
-          cy.get(`#${menuElemetnToTest}`)
+          cy.get(`#${menuElementToTest}`)
             .should('be.visible');
         });
       });
@@ -38,25 +38,33 @@ context('Navigation', () => {
         'where'
       ];
 
-      menuElementsToTest.forEach((menuElemetnToTest) => {
-        describe(`Correct menu elements navigation ${menuElemetnToTest}`, () => {
+      menuElementsToTest.forEach((menuElementToTest) => {
+        describe(`Correct menu elements navigation ${menuElementToTest}`, () => {
           before(() => {
-            cy.get(`a[href="#${menuElemetnToTest}"]`)
+            cy.get(`a[href="#${menuElementToTest}"]`)
               .click();
           });
 
           it('Should have the correct url', () => {
-            cy.url().should('include', `/#${menuElemetnToTest}`);
+            cy.url().should('include', `/#${menuElementToTest}`);
           });
 
           it('Should select the correct menu element', () => {
-            cy.get(`a[href="#${menuElemetnToTest}"] li`)
+            cy.get(`a[href="#${menuElementToTest}"] li`)
               .should('have.class', 'selected');
           });
+        });
+      });
 
-          it('Should display the correct element on the screen', () => {
-            cy.get(`#${menuElemetnToTest}`)
-              .should('be.visible');
+      menuElementsToTest.forEach((menuElementToTest) => {
+        describe.only(`Check menu selection when manually scrolling to ${menuElementToTest} menu element`, () => {
+          before(() => {
+            cy.get(`#${menuElementToTest}`).scrollIntoView();
+          });
+
+          it('Should select the correct menu element', () => {
+            cy.get(`a[href="#${menuElementToTest}"] li`)
+              .should('have.class', 'selected');
           });
         });
       });
