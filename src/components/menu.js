@@ -5,7 +5,8 @@ const InitializeMenuController = () => {
   const $menuToggle = document.querySelector('#toggle-button');
   const $menu = document.querySelector('#menu');
   const $menuElements = $menu.querySelectorAll('ul li');
-  const manualScrollEvent = 'DOMMouseScroll mousewheel';
+  //const manualScrollEvent = 'DOMMouseScroll mousewheel';
+  const manualScrollEvent = 'scroll';
 
   const triggerMenuToggle = () => $menu.classList.toggle('show-menu');
 
@@ -19,16 +20,21 @@ const InitializeMenuController = () => {
   const cleanMenuSelection = () => $menuElements.forEach(($menuElement) => $menuElement.classList.remove('selected'));
 
   $menuToggle.onclick = triggerMenuToggle;
-  $menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
+  //$menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
 
   $(window).on(manualScrollEvent, () => {
     const scrollDistance = $(window).scrollTop();
 
     const $sections = $('.section');
-    $sections.each(function (currentSectionIndex) {
-      if ($(this).position().top <= scrollDistance) {
+    $sections.each(function($section) {
+      const bounding = $section.getBoundingClientRect();
+      if (bounding.top >= 0 && bounding.bottom <= window.innerHeight) {
+        console.log('scrollbar', scrollDistance);
+        console.log('this top', $($section).position().top);
+        console.log('--------------------------------------------------------');
         $('#menu a li.selected').removeClass('selected');
-        $('#menu a li').eq(currentSectionIndex).addClass('selected');
+        $(`#menu a[href="#${$section.id}"] li`).addClass('selected');
+        return;
       }
     });
   });
