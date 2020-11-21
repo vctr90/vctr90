@@ -39,7 +39,7 @@ context('Navigation', () => {
       ];
 
       menuElementsToTest.forEach((menuElementToTest) => {
-        describe(`Correct menu elements navigation ${menuElementToTest}`, () => {
+        describe.only(`Correct menu elements navigation ${menuElementToTest}`, () => {
           before(() => {
             cy.get(`a[href="#${menuElementToTest}"]`)
               .click();
@@ -49,7 +49,7 @@ context('Navigation', () => {
             cy.url().should('include', `/#${menuElementToTest}`);
           });
 
-          it('Should select the correct menu element', () => {
+          it.only('Should select the correct menu element', () => {
             cy.get(`a[href="#${menuElementToTest}"] li`)
               .should('have.class', 'selected');
           });
@@ -57,7 +57,7 @@ context('Navigation', () => {
       });
 
       menuElementsToTest.forEach((menuElementToTest) => {
-        describe.only(`Check menu selection when manually scrolling to ${menuElementToTest} menu element`, () => {
+        describe(`Check menu selection when manually scrolling to ${menuElementToTest} menu element`, () => {
           before(() => {
             cy.get(`#${menuElementToTest}`).scrollIntoView();
           });

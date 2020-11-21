@@ -22,7 +22,49 @@ const InitializeMenuController = () => {
   $menuToggle.onclick = triggerMenuToggle;
   //$menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
 
-  $(window).on(manualScrollEvent, () => {
+  const genericMenuElementSelector = `#menu a[href^="#"] li`;
+  const selectedMenuElementSelector = `#menu a li.selected`;
+  const onScroll = (event) => {
+    //event.preventDefault();
+    const scrollPosition = $(document).scrollTop();
+    $(genericMenuElementSelector).each(function () {
+      const $menuElement = $(this);
+      const target = $menuElement.parent().attr('href');
+      const $menuElementTarget = $(target);
+      if($menuElementTarget.position().top <= scrollPosition && $menuElementTarget.position().top + $menuElementTarget.height() > scrollPosition) {
+        $(selectedMenuElementSelector).removeClass('selected');
+        $menuElement.addClass('selected');
+        $menuElementTarget.scrollTop(scrollPosition);
+      } else {
+        $menuElement.removeClass('selected');
+      }
+    });
+  };
+
+  $(document).on('scroll', onScroll);
+
+  $(genericMenuElementSelector).on('click', function (event) {
+    event.preventDefault();
+    $(document).off('scroll');
+    
+    $(selectedMenuElementSelector).removeClass('selected');
+
+    $(this).addClass('selected');
+
+    const $target = $(this).parent();
+    const target = $target.attr('href');
+
+      window.location.hash = target;
+      $(document).on('scroll', onScroll);
+    /*$('html, body').stop().animate({
+      'scrollTop': $target.offset().top + 2
+    }, 200, 'swing', () => {
+      window.location.hash = target;
+      $(document).on('scroll', onScroll);
+    });*/
+  });
+  
+  /*$(window).on(manualScrollEvent, () => {
     const scrollDistance = $(window).scrollTop();
 
     const $sections = $('.section');
@@ -37,7 +79,7 @@ const InitializeMenuController = () => {
         return;
       }
     });
-  });
+  });*/
 };
 
 const Menu = () => {
