@@ -56,6 +56,13 @@ const InitializeMenuController = () => {
   };
 
   $(document).on('scroll', onScroll);
+
+  /*$('#menu a').on('click', function() {
+    const target = $(this).attr('href');
+    const $target = $(target)[0];
+    window.location.hash = target;
+    $target.scrollIntoView(true);
+  });*/
 };
 
 const Menu = () => {
