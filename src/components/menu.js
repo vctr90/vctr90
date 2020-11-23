@@ -2,39 +2,67 @@ import React, { useEffect } from 'react';
 import $ from 'jquery';
 
 const InitializeMenuController = () => {
+
+  /**
+   * A workaround for an issue with the scroll in some versions chrome
+   * 
+   * Reference: https://stackoverflow.com/questions/38588346/anchor-a-tags-not-working-in-chrome-when-using
+   */
+  const fixChromeScrollIssue = () => {
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+    if (window.location.hash && isChrome) {
+      setTimeout(function () {
+        const hash = window.location.hash;
+        window.location.hash = "";
+        window.location.hash = hash;
+      }, 300);
+    }
+  }
+
+  fixChromeScrollIssue();
+
   const $menuToggle = document.querySelector('#toggle-button');
   const $menu = document.querySelector('#menu');
-  const $menuElements = $menu.querySelectorAll('ul li');
-  const manualScrollEvent = 'DOMMouseScroll mousewheel';
 
   const triggerMenuToggle = () => $menu.classList.toggle('show-menu');
 
-  let clickedMenu = false;
+  $menuToggle.onclick = triggerMenuToggle;
 
-  const navigateToSection = (event) => {
-    cleanMenuSelection();
-    event.currentTarget.classList.toggle('selected');
-    triggerMenuToggle();
+  const selectedMenuElementSelector = `#menu a li.selected`;
+
+  // Implementation inspired from https://github.com/vctr90/cathypes.com/blame/master/src/components/shared/Header/NavMenu.js#L65
+
+  const onScroll = function () {
+    const scrollPosition = $(this).scrollTop() + 200;
+
+    const sections = $('.section');
+
+    sections.each(function () {
+      const $section = $(this);
+      const sectionTop = $section.offset().top;
+      const sectionBottom = sectionTop + $section.outerHeight();
+
+      if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+        if (scrollPosition <= sectionBottom) {
+          // Clean all selections
+          $(selectedMenuElementSelector).removeClass('selected');
+        }
+
+        // Select the matching section element
+        $(`#menu a[href="#${$section.attr('id')}"] li`).addClass('selected');
+      }
+    });
   };
 
-  const cleanMenuSelection = () => $menuElements.forEach(($menuElement) => $menuElement.classList.remove('selected'));
+  $(document).on('scroll', onScroll);
 
-  $menuToggle.onclick = triggerMenuToggle;
-  $menuElements.forEach(($menuElement) => $menuElement.onclick = navigateToSection);
-
-  $(window).on(manualScrollEvent, () => {
-    if (!clickedMenu) {
-      const scrollDistance = $(window).scrollTop();
-
-      const $sections = $('.section');
-      $sections.each(function (currentSectionIndex) {
-        if ($(this).position().top <= scrollDistance) {
-          $('#menu a li.selected').removeClass('selected');
-          $('#menu a li').eq(currentSectionIndex).addClass('selected');
-        }
-      });
-    }
-  });
+  /*$('#menu a').on('click', function() {
+    const target = $(this).attr('href');
+    const $target = $(target)[0];
+    window.location.hash = target;
+    $target.scrollIntoView(true);
+  });*/
 };
 
 const Menu = () => {

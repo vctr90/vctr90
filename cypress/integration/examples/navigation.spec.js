@@ -1,53 +1,71 @@
 /// <reference types="cypress" />
 
 context('Navigation', () => {
-  describe('Menu navigation', () => {
-    before(() => {
-      cy.visit('localhost:8000');
-    });
+  const sizes = ['iphone-x', [1920, 1080]];
 
-    describe('Default route', () => {
-      const menuElemetnToTest = 'hi';
-
-      it('Should select the correct menu element', () => {
-        cy.get(`a[href="#${menuElemetnToTest}"] li`)
-          .should('have.class', 'selected');
+  sizes.forEach(size => {
+    describe(`Menu navigation at ${size} resolution`, () => {
+      before(() => {
+        cy.visit('localhost:8000');
+        if (Cypress._.isArray(size)) {            
+          const [ width, height ] = size;
+          cy.viewport(width, height);
+        } else {            
+          cy.viewport(size);
+        }
       });
 
-      it('Should display the correct element on the screen', () => {
-        cy.get(`#${menuElemetnToTest}`)
-          .should('be.visible');
-      });
-    });
-
-    const menuElementsToTest = [
-      'hi',
-      'experience',
-      'technologies',
-      'portfolio',
-      'contact',
-      'where'
-    ];
-
-    menuElementsToTest.forEach((menuElemetnToTest) => {
-      describe(`Correct menu elements navigation ${menuElemetnToTest}`, () => {
-        before(() => {
-          cy.get(`a[href="#${menuElemetnToTest}"]`)
-            .click();
-        });
-
-        it('Should have the correct url', () => {
-          cy.url().should('include', `/#${menuElemetnToTest}`);
-        });
+      describe('Default route', () => {
+        const menuElementToTest = 'hi';
 
         it('Should select the correct menu element', () => {
-          cy.get(`a[href="#${menuElemetnToTest}"] li`)
+          cy.get(`a[href="#${menuElementToTest}"] li`)
             .should('have.class', 'selected');
         });
 
         it('Should display the correct element on the screen', () => {
-          cy.get(`#${menuElemetnToTest}`)
+          cy.get(`#${menuElementToTest}`)
             .should('be.visible');
+        });
+      });
+
+      const menuElementsToTest = [
+        'hi',
+        'experience',
+        'technologies',
+        'portfolio',
+        'contact',
+        'where'
+      ];
+
+      menuElementsToTest.forEach((menuElementToTest) => {
+        describe(`Correct menu elements navigation ${menuElementToTest}`, () => {
+          before(() => {
+            cy.get(`a[href="#${menuElementToTest}"]`)
+              .click();
+          });
+
+          it('Should have the correct url', () => {
+            cy.url().should('include', `/#${menuElementToTest}`);
+          });
+
+          it('Should select the correct menu element', () => {
+            cy.get(`a[href="#${menuElementToTest}"] li`)
+              .should('have.class', 'selected');
+          });
+        });
+      });
+
+      menuElementsToTest.forEach((menuElementToTest) => {
+        describe(`Check menu selection when manually scrolling to ${menuElementToTest} menu element`, () => {
+          before(() => {
+            cy.get(`#${menuElementToTest}`).scrollIntoView();
+          });
+
+          it('Should select the correct menu element', () => {
+            cy.get(`a[href="#${menuElementToTest}"] li`)
+              .should('have.class', 'selected');
+          });
         });
       });
     });
