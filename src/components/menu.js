@@ -2,18 +2,26 @@ import React, { useEffect } from 'react';
 import $ from 'jquery';
 
 const InitializeMenuController = () => {
-  const fixChromeScrollIssue = () => {
-    setTimeout(function () {
-      const hash = window.location.hash;
-      window.location.hash = "";
-      window.location.hash = hash;
-    }, 300);
-  }
-  const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-  if (window.location.hash && isChrome) {
-    fixChromeScrollIssue();
+  /**
+   * A workaround for an issue with the scroll in some versions chrome
+   * 
+   * Reference: https://stackoverflow.com/questions/38588346/anchor-a-tags-not-working-in-chrome-when-using
+   */
+  const fixChromeScrollIssue = () => {
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+    if (window.location.hash && isChrome) {
+      setTimeout(function () {
+        const hash = window.location.hash;
+        window.location.hash = "";
+        window.location.hash = hash;
+      }, 300);
+    }
   }
+
+  fixChromeScrollIssue();
+
   const $menuToggle = document.querySelector('#toggle-button');
   const $menu = document.querySelector('#menu');
 
